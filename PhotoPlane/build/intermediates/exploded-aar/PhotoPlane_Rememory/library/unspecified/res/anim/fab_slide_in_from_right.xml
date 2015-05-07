@@ -9,4 +9,4 @@
         android:fromXDelta="15%p"
         android:toXDelta="0"
         android:duration="200" />
-</set><!-- From: file:/C:/Users/Junsion/Documents/AndroidProjects/PhotoPlane_Rememory/library/src/main/res/anim/fab_slide_in_from_right.xml -->
+</set><!-- From: file:/C:/Users/Junsion/Documents/PhotoPlane/PhotoPlane_Rememory/library/src/main/res/anim/fab_slide_in_from_right.xml -->
