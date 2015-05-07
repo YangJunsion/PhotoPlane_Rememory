@@ -4,3 +4,5 @@
 /.idea/libraries
 .DS_Store
 /build
+/PhotoPlane/build/intermediates/classes/debug/
+/PhotoPlane/build/intermediates/res
