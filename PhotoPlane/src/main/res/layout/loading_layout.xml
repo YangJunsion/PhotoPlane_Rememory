@@ -3,7 +3,7 @@
     android:id="@+id/loading_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@android:color/black"
     android:gravity="center"
     android:orientation="vertical"
     android:visibility="gone" >
@@ -11,7 +11,8 @@
     <ProgressBar
         android:id="@+id/loading_pb"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <LinearLayout
         android:id="@+id/loading_fail_layout"

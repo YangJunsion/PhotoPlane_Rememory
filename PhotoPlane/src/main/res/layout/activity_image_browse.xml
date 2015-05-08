@@ -6,6 +6,8 @@
     <com.photoplane.widget.HackyViewPager
         android:id="@+id/image_vp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#000000"
+        />
 
 </FrameLayout>

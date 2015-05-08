@@ -8,10 +8,12 @@
 
 package com.photoplane.ui;
 
+
 import android.content.Intent;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.os.Handler;
+
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,7 +23,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
-
+import android.support.v4.app.Fragment;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.photoplane.R;
@@ -39,7 +41,7 @@ import java.util.List;
 
 /**
  * 图片选择主界面，列出所有图片文件夹
- * 
+ *
  * @author photoplane
  */
 public class MainActivity extends ActionBarActivity implements OnItemClickListener {
@@ -64,17 +66,16 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
     private ImageLoadTask mLoadTask = null;
 
     /*FloatingActionButton
-    *2015-05-05 16:37:02 by Junsion
-    */
+*2015-05-05 16:37:02 by Junsion
+*/
     private int mPreviousVisibleItem;
-    private FloatingActionButton fab1;
-    private FloatingActionButton fab2;
-    private FloatingActionButton fab3;
-    private FloatingActionButton fab12;
-    private FloatingActionButton fab22;
-    private FloatingActionButton fab32;
     private List<FloatingActionMenu> menus = new ArrayList<>();
     private Handler mUiHandler = new Handler();
+
+    //dialog
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +91,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
         initView();
         loadImages();
 
-        /*FloatingActionButton
+                /*FloatingActionButton
         *2015-05-05 16:37:02 by Junsion
         */
         final FloatingActionMenu menu1 = (FloatingActionMenu) findViewById(R.id.menu1);
@@ -107,12 +108,6 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
             delay += 150;
         }
         menu1.setClosedOnTouchOutside(true);
-        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
-        fab1.setOnClickListener(clickListener);
-        fab2.setOnClickListener(clickListener);
-        fab3.setOnClickListener(clickListener);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -205,27 +200,16 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
         mIntent.putStringArrayListExtra(ImageListActivity.EXTRA_IMAGES_DATAS, childList);
         startActivity(mIntent);
     }
-
     /*FloatingActionButton
-    *2015-05-05 16:37:02 by Junsion
-    */
+            *2015-05-05 16:37:02 by Junsion
+            */
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             String text = "";
 
-            switch (v.getId()) {
-                case R.id.fab1:
-                    text = fab1.getLabelText();
-                    break;
-                case R.id.fab2:
-                    text = fab2.getLabelText();
-                    break;
-                case R.id.fab3:
-                    text = fab3.getLabelText();
-                    break;
-            }
             Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
         }
     };
+
 }

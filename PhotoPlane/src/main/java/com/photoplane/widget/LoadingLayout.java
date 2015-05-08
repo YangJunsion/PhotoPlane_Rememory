@@ -20,7 +20,7 @@ import com.photoplane.R;
 
 /**
  * 整块区域的Loading
- * 
+ *
  * @author photoplane
  */
 public class LoadingLayout extends LinearLayout {
